@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo task manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>welcome to Dojo, your favourite task manager!</h1>
+            <div class="stats">
+                <span id="total-tasks">0 tasks</span>
+                <span id="completed-tasks">0 completed</span>
+            </div>
+        </header>
+
+        <div class="input-area">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button id="add-btn"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="task-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="shopping">Shopping</option>
+                <option value="other">Other</option>
+            </select>
+            <select id="priority-filter">
+                <option value="all">All Priorities</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+
+        <div class="task-details-form" id="task-details-form">
+            <h3>Task Details</h3>
+            <div class="form-group">
+                <label for="edit-task-text">Task:</label>
+                <input type="text" id="edit-task-text">
+            </div>
+            <div class="form-group">
+                <label for="edit-task-category">Category:</label>
+                <select id="edit-task-category">
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="edit-task-priority">Priority:</label>
+                <select id="edit-task-priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="edit-task-due-date">Due Date:</label>
+                <input type="date" id="edit-task-due-date">
+            </div>
+            <div class="form-group">
+                <label for="edit-task-notes">Notes:</label>
+                <textarea id="edit-task-notes" rows="3"></textarea>
+            </div>
+            <div class="form-buttons">
+                <button id="save-details-btn">Save</button>
+                <button id="cancel-details-btn">Cancel</button>
+            </div>
+        </div>
+
+        <ul id="task-list"></ul>
+
+        <div class="actions">
+            <button id="clear-completed-btn">Clear Completed</button>
+            <button id="clear-all-btn">Clear All</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
